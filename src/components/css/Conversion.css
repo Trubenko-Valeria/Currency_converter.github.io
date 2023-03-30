@@ -1,0 +1,33 @@
+.head {
+  text-align: center;
+  margin: 0 50px;
+  padding: 30px 0 0 0;
+}
+.head__title {
+  color: #8C0004;
+}
+.head__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 0 100px;
+}
+.head__block__wrapper__label {
+  color: #373737;
+  padding-right: 5px;
+}
+.head__block__wrapper__input {
+  background-clip: padding-box;
+  border: 1px solid #C0C0C0;
+  border-radius: 0.25rem;
+  margin-right: 5px;
+}
+.head__block__wrapper__select {
+  border-radius: 0.25rem;
+  border: 1px solid #C0C0C0;
+}

@@ -1,0 +1,40 @@
+$title-text-color: #8C0004;
+$text-color: #373737;
+$backround-color: #ffffff;
+$table-color: #C0C0C0;
+$container-color: #808080;
+
+.head {
+    text-align: center;
+    margin: 0 50px;
+    padding: 30px 0 0 0;
+
+  &__title {
+    color: $title-text-color;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0 100px;
+
+    &__wrapper {
+      &__label {
+        color: $text-color;
+        padding-right: 5px;
+      }
+        &__input {
+          background-clip: padding-box;
+          border: 1px solid $table-color;
+          border-radius: 0.25rem;
+          margin-right: 5px;
+        }
+      
+        &__select {
+          border-radius: 0.25rem;
+          border: 1px solid $table-color;
+        }
+    }
+  }
+}

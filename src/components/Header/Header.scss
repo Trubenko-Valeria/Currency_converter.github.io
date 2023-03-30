@@ -1,0 +1,84 @@
+$title-text-color: #8C0004;
+$text-color: #373737;
+$backround-color: #ffffff;
+$table-color: #C0C0C0;
+$container-color: #808080;
+
+.header {
+  padding: 30px 0 0 0;
+  text-align: center;
+  margin: 0 50px;
+  
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: $container-color;
+
+    &__logo {
+      display: flex;
+      justify-content: flex-start;
+      align-content: center;
+      
+      &__text {
+        padding-left: 5px;
+        font-size: 20px;
+        text-shadow: 3px 3px $title-text-color;
+        animation: Logo-spin infinite 2s linear;
+        
+        &__span {
+            text-shadow: 3px 3px $backround-color;
+          }
+      }
+      @keyframes Logo-spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(5deg);
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: $title-text-color;
+  }
+
+  &__table {
+      justify-content: center;
+      border-collapse: collapse;
+      color: $text-color;
+    
+      &__currency {
+      background: $table-color;
+      justify-content: center;
+      margin: 0 auto;
+      }
+  }
+}
+
+thead th:nth-child(1) {
+  width: 40%;
+}
+
+thead th:nth-child(2) {
+  width: 30%;
+}
+
+thead th:nth-child(3) {
+  width: 30%;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: $backround-color;
+}
+
+tbody tr:nth-child(even) {
+  background-color: $backround-color;
+} 
