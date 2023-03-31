@@ -6,7 +6,12 @@ import image from "../img/logo.png";
 import Data from "../Data/Data";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    console.log(this.props.currencyRate);
+    }
   render() {
+    const { date, currencyRate } = this.props;
     return (
       <div className="header">
         <div className="header__top">
@@ -18,29 +23,32 @@ class Header extends Component {
           </div>
           <Data />
         </div>
-        
-        <h1 className="header__title">Current exchange rate</h1>
+
+        <h1 className="header__title">
+          The official exchange rate of the UAH against foreign currencies for{" "}
+          {date}
+        </h1>
         <div className="header__table">
           <table className="header__table__currency">
             <thead>
               <tr>
                 <th>Currency</th>
-                <th>Purchase</th>
-                <th>Selling</th>
+                <th>Exchange rates</th>
               </tr>
             </thead>
 
             <tbody>
-              <tr>
-                <td>USD</td>
-                <td>37,650</td>
-                <td>38,350</td>
-              </tr>
-              <tr>
-                <td>EUR</td>
-                <td>40,500</td>
-                <td>41,100</td>
-              </tr>
+              {Object.keys(currencyRate).map((keyName, i) => (
+                <tr key={keyName}>
+                  <td className="text__uppercase">{keyName}</td>
+                  <td>
+                    {currencyRate[keyName].toFixed(3)}*
+                    <br></br>
+                    * You can be bought for 1
+                    UAH
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

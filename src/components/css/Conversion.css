@@ -31,3 +31,7 @@
   border-radius: 0.25rem;
   border: 1px solid #C0C0C0;
 }
+
+.text__uppercase {
+  text-transform: uppercase;
+}

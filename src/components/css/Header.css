@@ -71,16 +71,16 @@
   margin: 0 auto;
 }
 
+.text__uppercase {
+  text-transform: uppercase;
+}
+
 thead th:nth-child(1) {
-  width: 40%;
+  width: 30%;
 }
 
 thead th:nth-child(2) {
-  width: 30%;
-}
-
-thead th:nth-child(3) {
-  width: 30%;
+  width: 70%;
 }
 
 th,
