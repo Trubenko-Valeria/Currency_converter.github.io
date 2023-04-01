@@ -8,10 +8,9 @@ import Data from "../Data/Data";
 class Header extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.currencyRate);
-    }
+  }
   render() {
-    const { date, currencyRate } = this.props;
+    const { date, currencyRateSmall } = this.props;
     return (
       <div className="header">
         <div className="header__top">
@@ -21,11 +20,15 @@ class Header extends Component {
               Cu<span className="header__top__logo__text__span">Rex</span>Ua
             </p>
           </div>
-          <Data />
+          <div className="header__top__data">
+            <p className="header__top__data__text">Today is: {date}</p>
+          </div>
+          {/* <Data /> */}
         </div>
 
         <h1 className="header__title">
           The official exchange rate of the UAH against foreign currencies for{" "}
+          <br></br>
           {date}
         </h1>
         <div className="header__table">
@@ -38,14 +41,12 @@ class Header extends Component {
             </thead>
 
             <tbody>
-              {Object.keys(currencyRate).map((keyName, i) => (
+              {Object.keys(currencyRateSmall).map((keyName, i) => (
                 <tr key={keyName}>
                   <td className="text__uppercase">{keyName}</td>
                   <td>
-                    {currencyRate[keyName].toFixed(3)}*
-                    <br></br>
-                    * You can be bought for 1
-                    UAH
+                    {currencyRateSmall[keyName].toFixed(3)}*<br></br>* You can
+                    be bought for 1 UAH
                   </td>
                 </tr>
               ))}

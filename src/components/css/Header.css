@@ -1,7 +1,7 @@
 .header {
-  padding: 30px 0 0 0;
+  padding: 0;
   text-align: center;
-  margin: 0 50px;
+  margin: 0 5%;
 }
 .header__top {
   display: -webkit-box;
@@ -10,7 +10,10 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 30px;
   background: #808080;
 }
 .header__top__logo {
@@ -20,15 +23,17 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .header__top__logo__text {
-  padding-left: 5px;
-  font-size: 20px;
+  padding-left: 10px;
+  font-size: 24px;
   text-shadow: 3px 3px #8C0004;
-  -webkit-animation: Logo-spin infinite 2s linear;
-          animation: Logo-spin infinite 2s linear;
+  -webkit-animation: Logo-spin 1s infinite;
+          animation: Logo-spin 1s infinite;
+  animation-direction: alternate-reverse;
 }
 .header__top__logo__text__span {
   text-shadow: 3px 3px #ffffff;
@@ -39,8 +44,8 @@
             transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
   }
 }
 @keyframes Logo-spin {
@@ -49,9 +54,23 @@
             transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
   }
+}
+.header__top__data {
+  width: 90px;
+  background-image: url("../img/calendar.png");
+  background-size: 90px;
+  background-repeat: no-repeat;
+  font-style: italic;
+}
+.header__top__data__text {
+  padding-top: 15px;
+  padding: 15px 5px 10px 8px;
+  color: #373737;
+  font-size: 14px;
+  text-shadow: 0.3px 0.3px #373737;
 }
 .header__title {
   color: #8C0004;

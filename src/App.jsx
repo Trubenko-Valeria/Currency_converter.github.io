@@ -6,12 +6,13 @@ import Header from "./components/Header/Header";
 import Conversion from "./components/Conversion/Conversion";
 
 class App extends Component {
+  state = {
+    currencyRate: {},
+    currencyRateSmall: {},
+  };
+
   constructor(props) {
     super(props);
-    this.state = {
-      date: "",
-      currencyRate: {},
-    };
     this.currecy = ["uah", "usd", "eur"];
     this.getRate();
   }
@@ -20,33 +21,44 @@ class App extends Component {
 
   getRate = () => {
     const newData = new Date();
-    const todayData =
+    const apiData =
       newData.getFullYear() +
       "-" +
       ("0" + (newData.getMonth() + 1)).slice(-2) +
       "-" +
       ("0" + newData.getDate()).slice(-2);
+    const dataToday =
+      ("0" + newData.getDate()).slice(-2) +
+      "." +
+      ("0" + (newData.getMonth() + 1)).slice(-2) +
+      "." +
+      newData.getFullYear();
     fetch(
-      `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${todayData}/currencies/uah.json`
+      `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/${apiData}/currencies/uah.json`
     )
       .then((data) => {
         return data.json();
       })
       .then((data) => {
-        this.setState({ date: data.date });
         let result = {};
+        let resultSmall = {};
         for (let i = 0; i < this.currecy.length; i++) {
           result[this.currecy[i]] = data.uah[this.currecy[i]];
         }
         this.setState({ currencyRate: result });
+        for (let i = 1; i < this.currecy.length; i++) {
+          resultSmall[this.currecy[i]] = data.uah[this.currecy[i]];
+        }
+        this.setState({ currencyRateSmall: resultSmall });
       });
+    return dataToday;
   };
 
   render() {
-    const { date, currencyRate } = this.state;
+    const { currencyRate, currencyRateSmall } = this.state;
     return (
       <div className="App">
-        <Header date={date} currencyRate={currencyRate} />
+        <Header date={this.getRate()} currencyRateSmall={currencyRateSmall} />
         <Conversion currencyRate={currencyRate} />
       </div>
     );

@@ -5,26 +5,28 @@ $table-color: #C0C0C0;
 $container-color: #808080;
 
 .header {
-  padding: 30px 0 0 0;
+  padding: 0;
   text-align: center;
-  margin: 0 50px;
+  margin: 0 5%;
   
   &__top {
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
+    align-items: center;
+    padding: 30px 30px;
     background: $container-color;
 
     &__logo {
       display: flex;
       justify-content: flex-start;
-      align-content: center;
+      align-items: center;
       
       &__text {
-        padding-left: 5px;
-        font-size: 20px;
+        padding-left: 10px;
+        font-size: 24px;
         text-shadow: 3px 3px $title-text-color;
-        animation: Logo-spin infinite 2s linear;
+        animation: Logo-spin 1s infinite;
+        animation-direction: alternate-reverse;
         
         &__span {
             text-shadow: 3px 3px $backround-color;
@@ -35,8 +37,22 @@ $container-color: #808080;
           transform: rotate(0deg);
         }
         to {
-          transform: rotate(5deg);
+          transform: rotate(10deg);
         }
+      }
+    }
+    &__data {
+      width: 90px;
+      background-image: url('../img/calendar.png');
+      background-size: 90px;
+      background-repeat: no-repeat;
+      font-style: italic;
+      &__text {
+        padding-top: 15px;
+        padding: 15px 5px 10px 8px;
+        color: $text-color;
+        font-size: 14px;
+        text-shadow: 0.3px 0.3px $text-color;
       }
     }
   }
