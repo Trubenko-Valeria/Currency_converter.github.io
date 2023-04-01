@@ -3,7 +3,7 @@ import { Component } from "react";
 import "../css/Header.css";
 import image from "../img/logo.png";
 
-import Data from "../Data/Data";
+// import Data from "../Data/Data";
 
 class Header extends Component {
   constructor(props) {
