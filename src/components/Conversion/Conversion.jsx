@@ -27,14 +27,12 @@ class Conversion extends Component {
 
   calcConv_1 = (e) => {
     e.preventDefault();
-    console.log("1");
     const { currency_1, currency_2, value_1 } = this.state;
     const { currencyRate } = this.props;
     if (currency_1 == currency_2) {
       this.setState({
         value_2: value_1,
       });
-      console.log("333");
     } else if (currency_1 == "uah") {
       this.setState({
         value_2: value_1 * currencyRate[currency_2],
@@ -51,19 +49,16 @@ class Conversion extends Component {
         });
       }
     }
-    console.log("2");
   };
 
   calcConv_2 = (e) => {
     e.preventDefault();
-    console.log("1");
     const { currency_1, currency_2, value_2 } = this.state;
     const { currencyRate } = this.props;
     if (currency_2 == currency_1) {
       this.setState({
         value_1: value_2,
       });
-      console.log("333");
     } else if (currency_2 == "uah") {
       this.setState({
         value_1: value_2 * currencyRate[currency_1],
@@ -80,7 +75,6 @@ class Conversion extends Component {
         });
       }
     }
-    console.log("2");
   };
 
   render() {
@@ -119,8 +113,6 @@ class Conversion extends Component {
                 </option>
               ))}
             </select>
-            {/* {this.state.value_1}
-            {this.state.currency_1} */}
           </form>
 
           <form onSubmit={this.calcConv_2} className="head__block__wrapper">
@@ -151,8 +143,6 @@ class Conversion extends Component {
                 </option>
               ))}
             </select>
-            {/* {this.state.value_2}
-            {this.state.currency_2} */}
           </form>
         </div>
       </div>
