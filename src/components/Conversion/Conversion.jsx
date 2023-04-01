@@ -1,6 +1,5 @@
 // import logo from './logo.png';
 import { Component } from "react";
-import { useState } from "react";
 import "../css/Conversion.css";
 
 class Conversion extends Component {
